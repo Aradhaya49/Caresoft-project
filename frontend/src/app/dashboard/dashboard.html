@@ -1,0 +1,39 @@
+<h2>Dashboard</h2>
+
+<app-task-form></app-task-form>
+
+<br>
+
+<button (click)="filter('ALL')">
+  All
+</button>
+
+<button (click)="filter('OPEN')">
+  Open
+</button>
+
+<button (click)="filter('IN_PROGRESS')">
+  In Progress
+</button>
+
+<button (click)="filter('COMPLETED')">
+  Completed
+</button>
+
+<hr>
+
+<div *ngFor="let task of tasks">
+
+  <h3>{{task.title}}</h3>
+
+  <p>{{task.description}}</p>
+
+  <p>{{task.status}}</p>
+
+  <button (click)="deleteTask(task.id)">
+    Delete
+  </button>
+
+  <hr>
+
+</div>
